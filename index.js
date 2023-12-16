@@ -1,21 +1,20 @@
-// This file is not to be modified. Please ignore this.
-// We will understand all of this later in the course.
-// DO NOT MODIFY THIS FILE
+// ***********************************************************
+// This example support/index.js is processed and
+// loaded automatically before your test files.
+//
+// This is a great place to put global configuration and
+// behavior that modifies Cypress.
+//
+// You can change the location of this file or turn off
+// automatically serving support files with the
+// 'supportFile' configuration option.
+//
+// You can read more here:
+// https://on.cypress.io/configuration
+// ***********************************************************
 
-const express = require('express');
-const path = require('path');
+// Import commands.js using ES2015 syntax:
+import './commands'
 
-const app = express();
-
-app.use(express.static(__dirname))
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/main.html'));
-});
-//your code here
-app.post('/add', (req, res) => {
-  const {a,b} = req.body;
-  res.status(200).send(a+b);
-  // res.sendFile(path.join(__dirname + '/main.html'));
-});
-module.exports = app;
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
